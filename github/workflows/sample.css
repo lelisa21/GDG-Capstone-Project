@@ -1,0 +1,44 @@
+
+/* we will use the below colors throughout the project */
+
+/* Light Theme */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --accent-primary: #4361ee;
+    --accent-secondary: #3a0ca3;
+    --border-color: #dee2e6;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --toggle-bg: #e9ecef;
+    --toggle-handle: #ffffff;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --glass-effect: rgba(255, 255, 255, 0.7);
+    --neon-glow: none;
+    --gradient: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
+    --accent-primary: #7209b7;
+    --accent-secondary: #4361ee;
+    --border-color: #333333;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --toggle-bg: #2d2d2d;
+    --toggle-handle: #333333;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --glass-effect: rgba(30, 30, 30, 0.7);
+    --neon-glow: 0 0 10px rgba(114, 9, 183, 0.4);
+    --gradient: linear-gradient(135deg, #7209b7 0%, #4361ee 100%);
+    --nav-bg: rgba(30, 30, 30, 0.9);
+}
