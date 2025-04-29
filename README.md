@@ -1,1 +1,1 @@
-# GDG-Capstone-Project
+# GDG-Project
