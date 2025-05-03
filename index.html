@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+
+
+  <!-- Header -->
+  <header id="site-header" aria-label="Site header">
+    <div class="container">
+      <h1><span>Library Explorer</span></h1>
+
+      <!-- Navigation -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#book-list-section">Books</a></li>
+          <li><a href="#recommendations-section">Recommendations</a></li>
+          <li><a href="#favorites-section">Favorites</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search Bar -->
+      <form id="search-form" role="search" aria-label="Search books">
+        <input type="text" id="search-input" name="search" placeholder="Search by title or author" aria-label="Search by title or author" />
+        <button type="submit">Search</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Book List by Genre inside one Section -->
+    <section id="book-list-section" aria-labelledby="book-results-heading">
+  <h2 id="book-results-heading"><span>Available Books</span></h2>
+
+  <!-- Fiction Genre -->
+  <h3 id="fiction-genre"><span>Fiction</span></h3>
+  <div class="book-grid">
+    <article class="book-card" role="group" aria-labelledby="book-title-1">
+      <img src="Image/Where The Crawdads Sing.jpg"Cover of 'Where the Crawdads Sing' by Delia Owens" />
+      <div class="book-info">
+        <h3 id="book-title-1">Where the Crawdads Sing</h3>
+        <p class="book-author">by Delia Owens</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'Where the Crawdads Sing' to favorites">Favorite</button>
+        <button aria-label="More details about 'Where the Crawdads Sing'">Details</button>
+      </div>
+    </article>
+    <article class="book-card" role="group" aria-labelledby="book-title-2">
+      <img src="Image/Night circus.jpg" alt="Cover of 'The Night Circus' by Erin Morgenstern" />
+      <div class="book-info">
+        <h3 id="book-title-2">The Night Circus</h3>
+        <p class="book-author">by Erin Morgenstern</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'The Night Circus' to favorites">Favorite</button>
+        <button aria-label="More details about 'The Night Circus'">Details</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- Mystery Genre -->
+  <h3 id="mystery-genre"><span>Mystery</span></h3>
+  <div class="book-grid">
+    <article class="book-card" role="group" aria-labelledby="book-title-3">
+      <img src="Image/The girl with the dragon tattoo.jpg" alt="Cover of 'The Girl with the Dragon Tattoo' by Stieg Larsson" />
+      <div class="book-info">
+        <h3 id="book-title-3">The Girl with the Dragon Tattoo</h3>
+        <p class="book-author">by Stieg Larsson</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'The Girl with the Dragon Tattoo' to favorites">Favorite</button>
+        <button aria-label="More details about 'The Girl with the Dragon Tattoo'">Details</button>
+      </div>
+    </article>
+    <article class="book-card" role="group" aria-labelledby="book-title-4">
+      <img src="Image/gone girl.jpg" alt="Cover of 'Gone Girl' by Gillian Flynn" />
+      <div class="book-info">
+        <h3 id="book-title-4">Gone Girl</h3>
+        <p class="book-author">by Gillian Flynn</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'Gone Girl' to favorites">Favorite</button>
+        <button aria-label="More details about 'Gone Girl'">Details</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- Sci-Fi Genre -->
+  <h3 id="scifi-genre"><span>Sci-Fi</span></h3>
+  <div class="book-grid">
+    <article class="book-card" role="group" aria-labelledby="book-title-5">
+      <img src="Image/Project hail mary.jpg" alt="Cover of 'Project Hail Mary' by Andy Weir" />
+      <div class="book-info">
+        <h3 id="book-title-5">Project Hail Mary</h3>
+        <p class="book-author">by Andy Weir</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'Project Hail Mary' to favorites">Favorite</button>
+        <button aria-label="More details about 'Project Hail Mary'">Details</button>
+      </div>
+    </article>
+    <article class="book-card" role="group" aria-labelledby="book-title-6">
+      <img src="Image/Dune.jpg" alt="Cover of 'Dune' by Frank Herbert" />
+      <div class="book-info">
+        <h3 id="book-title-6">Dune</h3>
+        <p class="book-author">by Frank Herbert</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'Dune' to favorites">Favorite</button>
+        <button aria-label="More details about 'Dune'">Details</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- Romance Genre -->
+  <h3 id="romance-genre"><span>Romance</span></h3>
+  <div class="book-grid">
+    <article class="book-card" role="group" aria-labelledby="book-title-7">
+      <img src="Image/The hating game.jpg" alt="Cover of 'The Hating Game' by Sally Thorne" />
+      <div class="book-info">
+        <h3 id="book-title-7">The Hating Game</h3>
+        <p class="book-author">by Sally Thorne</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'The Hating Game' to favorites">Favorite</button>
+        <button aria-label="More details about 'The Hating Game'">Details</button>
+      </div>
+    </article>
+    <article class="book-card" role="group" aria-labelledby="book-title-8">
+      <img src="Image/Pride and Prejudice.jpg" alt="Cover of 'Pride and Prejudice' by Jane Austen" />
+      <div class="book-info">
+        <h3 id="book-title-8">Pride and Prejudice</h3>
+        <p class="book-author">by Jane Austen</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'Pride and Prejudice' to favorites">Favorite</button>
+        <button aria-label="More details about 'Pride and Prejudice'">Details</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- Historical Genre -->
+  <h3 id="historical-genre"><span>Historical</span></h3>
+  <div class="book-grid">
+    <article class="book-card" role="group" aria-labelledby="book-title-9">
+      <img src="Image/The book theif.jpg" alt="Cover of 'The Book Thief' by Markus Zusak" />
+      <div class="book-info">
+        <h3 id="book-title-9">The Book Thief</h3>
+        <p class="book-author">by Markus Zusak</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'The Book Thief' to favorites">Favorite</button>
+        <button aria-label="More details about 'The Book Thief'">Details</button>
+      </div>
+    </article>
+    <article class="book-card" role="group" aria-labelledby="book-title-10">
+      <img src="Image/All the light we cannot see.jpg" alt="Cover of 'All the Light We Cannot See' by Anthony Doerr" />
+      <div class="book-info">
+        <h3 id="book-title-10">All the Light We Cannot See</h3>
+        <p class="book-author">by Anthony Doerr</p>
+      </div>
+      <div class="book-actions">
+        <button aria-label="Add 'All the Light We Cannot See' to favorites">Favorite</button>
+        <button aria-label="More details about 'All the Light We Cannot See'">Details</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- "No Books Found" Placeholder (still inside this section) -->
+  <section id="no-results" class="empty-state" hidden aria-label="No results found">
+    <img src="images/no-books.png" alt="No books found illustration" class="empty-image" />
+    <p>Sorry, no books matched your search. Try a different title or author.</p>
+  </section>
+</section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations-section" aria-labelledby="recommendations-heading">
+      <h2 id="recommendations-heading"><span>Recommended Reads</span></h2>
+      <!-- Placeholder recommendation cards or message -->
+      <p>Recommended books will appear here.</p>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites-section" aria-labelledby="favorites-heading">
+      <h2 id="favorites-heading"><span>Your Favorites</span></h2>
+      <div id="favorites-list" class="book-grid">
+        <!-- Example favorite book card -->
+        <article class="book-card" role="group" aria-labelledby="fav-book-title-1">
+          <img src="Image/mid night library.jpg" alt="Cover of 'The Midnight Library' by Matt Haig" class="book-cover" />
+          <div class="book-info">
+            <h3 id="fav-book-title-1">The Midnight Library</h3>
+            <p class="book-author">by Matt Haig</p>
+          </div>
+          <div class="book-actions" aria-label="Favorite book actions">
+            <button aria-label="Remove 'The Midnight Library' from favorites"> Remove</button>
+            <button aria-label="More details about 'The Midnight Library'"> Details</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Empty Favorites Message -->
+      <section id="no-favorites" class="empty-state" hidden aria-label="No favorite books yet">
+        <img src="images/no-favorites.png" alt="Illustration showing no favorite books" class="empty-image" />
+        <p>You haven't added any favorite books yet. Click the button on a book to save it here.</p>
+        <button aria-label="Browse available books">Browse Books</button>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="site-footer" aria-label="Website Footer">
+    <div class="container">
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#book-list-section">Book List</a></li>
+          <li><a href="#favorites-section">Favorites</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <small>&copy; 2025 Library Explorer. All rights reserved.</small>
+    </div>
+  </footer>
+
+</body>
+</html>
