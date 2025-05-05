@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PagePort -Library Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/book.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+<div class="container">
+  <header class="navbar">
+      <div class="logo">
+          <h1><i class="fas fa-book-open"></i>PagePort</h1>
+          <p>Your digital library companion</p>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="#" class="active" id="home-link"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="#" id="search-link"><i class="fas fa-search"></i> Search</a></li>
+              <li><a href="#" id="favorites-link"><i class="fas fa-heart"></i> Favorites</a></li>
+              <li><a href="#" id="about-link"><i class="fas fa-info-circle"></i> About</a></li>
+          </ul>
+      </nav>
+      <div class="theme-toggle">
+          <span id="theme-icon"><i class="fas fa-moon"></i></span>
+          <label for="theme-switch" class="switch">
+              <input type="checkbox" id="theme-switch">
+              <span class="slider round"></span>
+          </label>
+      </div>
+      
+      <div id="authModal" class="auth-modal">
+        <div class="auth-content">
+            <span class="close-modal">&times;</span>
+            <form id="loginForm" class="auth-form">
+                <h3>Login</h3>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="btn primary-btn">Login</button>
+                <button type="button" class="auth-toggle">Create an account</button>
+            </form>
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <h3>Register</h3>
+                <input type="text" id="registerName" placeholder="Full Name" required>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <button type="submit" class="btn primary-btn">Register</button>
+                <button type="button" class="auth-toggle">Already have an account?</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="auth-actions">
+        <div id="userAvatar" class="user-avatar" style="display: none;">A</div>
+        <button id="logoutBtn" class="btn secondary-btn" style="display: none;">Logout</button>
+        <button id="loginBtn" class="btn primary-btn">Login</button>
+    </div>
+  </header>
+
+  <main>
+      <section id="home-section" class="active-section">
+          <div class="hero">
+              <div class="hero-content">
+                  <h2>Discover Your Next Favorite Book</h2>
+                  <p>Search millions of books from the OpenLibrary database and manage your personal reading list.</p>
+                  <div class="search-box">
+                      <input type="text" id="hero-search" placeholder="Search for books...">
+                      <button id="hero-search-btn"><i class="fas fa-search"></i></button>
+                  </div>
+              </div>
+              <div class="hero-image">
+                  <img src="assets/hompage.png" alt="Reading illustration">
+              </div>
+          </div>
+
+          <div class="featured-books">
+              <h3>Featured Collections</h3>
+              <div class="collections">
+                  <div class="collection-card" data-collection="fantasy">
+                      <div class="collection-content">
+                          <h4>Fantasy</h4>
+                          <p>Explore magical worlds and epic adventures</p>
+                      </div>
+                  </div>
+                  <div class="collection-card" data-collection="educational">
+                      <div class="collection-content">
+                        <h4>Educational</h4>
+                        <p>Read what transform your mind and shape your destiny</p>
+                    </div>
+                </div>
+                <div class="collection-card" data-collection="science">
+                    <div class="collection-content">
+                          <h4>Science</h4>
+                          <p>Discover the wonders of the universe</p>
+                      </div>
+                  </div>
+                  <div class="collection-card" data-collection="history">
+                      <div class="collection-content">
+                          <h4>History</h4>
+                          <p>Journey through time and civilizations</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="featured-books-section">
+          <h2>Featured Books</h2>
+          <div id="featured-books-grid" class="books-grid"></div>
+      </section>
+
+      <section id="search-section">
+          <div class="search-header">
+              <h2>Book Search</h2>
+              <div class="search-controls">
+                  <div class="search-box">
+                      <input type="text" id="book-search" placeholder="Search by title, author, or ISBN...">
+                      <button id="search-btn"><i class="fas fa-search"></i></button>
+                  </div>
+                  <div class="filters">
+                      <select id="sort-by">
+                          <option value="relevance">Sort by Relevance</option>
+                          <option value="new">Sort by Newest</option>
+                          <option value="old">Sort by Oldest</option>
+                      </select>
+                      <select id="results-count">
+                          <option value="10">10 results</option>
+                          <option value="25" selected>25 results</option>
+                          <option value="50">50 results</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <div class="search-results">
+              <div class="loading-spinner" id="loading-spinner">
+                  <div class="spinner"></div>
+                  <p>Searching for books...</p>
+              </div>
+              <div class="results-grid" id="results-grid"></div>
+              <div class="pagination" id="pagination"></div>
+          </div>
+      </section>
+
+      <section id="favorites-section">
+          <div class="favorites-header">
+              <h2>Your Favorites</h2>
+              <p>Manage your saved books here</p>
+          </div>
+          <div class="favorites-content">
+              <div class="no-favorites" id="no-favorites">
+                  <i class="fas fa-book-open"></i>
+                  <p>You haven't saved any books yet.</p>
+                  <button id="explore-books-btn">Explore Books</button>
+              </div>
+              <div class="favorites-grid" id="favorites-grid"></div>
+          </div>
+      </section>
+
+      <section id="about-section">
+          <div class="about-content">
+              <h2>About Library books</h2>
+              <div class="about-card">
+                  <div class="about-text">
+                      <p> This Library Explorer is a modern library management system that connects you with millions of books through the OpenLibrary API.</p>
+                      <p>With us, you can:</p>
+                      <ul>
+                          <li>Search for books by title, author, or ISBN</li>
+                          <li>Save your favorite books for later</li>
+                          <li>Discover new books through curated collections</li>
+                          <li>Enjoy a clean, customizable interface</li>
+                      </ul>
+                      <p>This project was created using HTML, CSS, and JavaScript, demonstrating modern web development techniques.</p>
+                  </div>
+                  <div class="about-image">
+                      <img src="assets/about.png" alt="About illustration">
+                  </div>
+              </div>
+              <div class="api-info">
+                  <h3>Powered by OpenLibrary</h3>
+                  <p>OpenLibrary is an open, editable library catalog, building towards a web page for every book ever published.</p>
+                  <a href="https://openlibrary.org" target="_blank" class="api-link">Visit OpenLibrary <i class="fas fa-external-link-alt"></i></a>
+              </div>
+          </div>
+      </section>
+  </main>
+
+  <div class="notification" id="notification"></div>
+</div>
+<footer>
+     <small>&copy; 2025 Library Explorer. All rights reserved.</small>
+</footer>
+
+<script src="js/js/auth.js" ></script>
+<script src="js/js/script.js" ></script>
+</body>
+</html>
